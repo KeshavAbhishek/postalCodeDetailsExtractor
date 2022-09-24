@@ -1,5 +1,5 @@
 function fetchFromDOP(){
-    var valueType = /^[A-Za-z]+$/;
+    var valueType = /^[A-Za-z]/;
     inputValue = document.getElementsByTagName('input')[0].value;
     if(inputValue.match(valueType)){
         const postalData = fetch(

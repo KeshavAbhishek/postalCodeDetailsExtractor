@@ -24,11 +24,24 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
         }
 
         updateTableData(position);
+        
+        setTimeout(() => {
+            html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
+                document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
+            });
+        }, 300);
+        
         function rightClick(){
             if(position<list.length){
                 position+=1;
                 document.getElementById("currP_maxP").innerHTML=`${position} / ${list.length}`;
                 updateTableData(position);
+
+                setTimeout(() => {
+                    html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
+                        document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
+                    });
+                }, 300);
             }
         }
         function leftClick(){
@@ -36,6 +49,12 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
                 position-=1;
                 document.getElementById("currP_maxP").innerHTML=`${position} / ${list.length}`;
                 updateTableData(position);
+
+                setTimeout(() => {
+                    html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
+                        document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
+                    });
+                }, 300);
             }
         }
 

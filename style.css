@@ -72,3 +72,15 @@ img{
 ::-webkit-scrollbar{
     display: none;
 }
+
+a{
+    font-size: 30pt;
+    text-decoration: none;
+    margin-bottom: 6%;
+    margin-top: 3%;
+    color: white;
+    background: navy;
+    padding: 1.5% 5%;
+    font-weight: bolder;
+    border-radius: 10px;
+}

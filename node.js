@@ -33,6 +33,8 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
                 document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
             });
         }, 300);
+
+        document.getElementById("saveDetails").style.display = "initial";
         
         function rightClick(){
             if(position<list.length){

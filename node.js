@@ -1,9 +1,20 @@
 function fetchFromDOP(){
-    const postalData = fetch(
-        `https://api.postalpincode.in/pincode/${document.getElementsByTagName('input')[0].value}`
-    ).then((res, err) => res.json());
-
-    return Promise.all([postalData]);
+    var valueType = /^[A-Za-z]+$/;
+    inputValue = document.getElementsByTagName('input')[0].value;
+    if(inputValue.match(valueType)){
+        const postalData = fetch(
+            `https://api.postalpincode.in/postoffice/${inputValue}`
+        ).then((res, err) => res.json());
+    
+        return Promise.all([postalData]);
+    }
+    else{
+        const postalData = fetch(
+            `https://api.postalpincode.in/pincode/${inputValue}`
+        ).then((res, err) => res.json());
+    
+        return Promise.all([postalData]);
+    }
 }
 
 document.getElementById("fetchDataBtn").onclick = ()=>{
@@ -19,9 +30,6 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
             var i = 0;
             for (const x of document.getElementsByClassName("values")) {
                 x.innerHTML = `${dataHere[keys[i]]}`;
-                if(keys[i]=="Description"){
-                    x.innerHTML = "NA";
-                }
                 i++;
             }
         }

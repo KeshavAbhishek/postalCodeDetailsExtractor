@@ -19,6 +19,9 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
             var i = 0;
             for (const x of document.getElementsByClassName("values")) {
                 x.innerHTML = `${dataHere[keys[i]]}`;
+                if(keys[i]=="Description"){
+                    x.innerHTML = "NA";
+                }
                 i++;
             }
         }

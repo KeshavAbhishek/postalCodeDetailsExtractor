@@ -10,69 +10,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <img src="https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg">
-    <input type="text" placeholder="Enter pincode or post office name" required>
-    <button id="fetchDataBtn">Proceed</button>
-    <table border="1" id="table">
-        <thead>
-            <tr>
-                <th colspan="2">POSTAL CODES DETAILS</th>
-            </tr>
-        </thead>
-        <tr>
-            <td class="keys">Name</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Description</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">BranchType</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">DeliveryStatus</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Circle</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">District</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Division</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Region</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Block</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">State</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Country</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Pincode</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-    </table>
-    <div id="btnFrame">
+    <!-- <img src="https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg"> -->
+    <div id="image" class="width30"></div>
+    <input type="text" placeholder="Enter pincode or post office name" required id="input" class="width30">
+    <button id="fetchDataBtn" class="width30">Proceed</button>
+    <div id="main" class="width30">
+        <div id="heading">POSTAL CODE DETAILS</div>
+        <br><br>
+    </div>
+    <div id="btnFrame" class="width30">
         <i id="leftBtn" class="plusMinusBtn fa-solid fa-circle-chevron-left"></i>
         <label id="currP_maxP"> / </label>
         <i id="rightBtn" class="plusMinusBtn fa-solid fa-circle-chevron-right"></i>
-
     </div>
     <a href="" id="saveDetails" download="POSTALCODEDEATILS.jpg">Save Current Details</a>
     <script src="node.js" defer></script>

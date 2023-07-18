@@ -26,10 +26,10 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
 
         function updateTableData(pos){
             dataHere = list[pos-1]
-            keys = ["Name", "Description", "BranchType", "DeliveryStatus", "Circle", "District", "Division", "Region", "Block", "State", "Country", "Pincode"]
+            var keys = ["Name", "Description", "BranchType", "DeliveryStatus", "Circle", "District", "Division", "Region", "Block", "State", "Country", "Pincode"]
             var i = 0;
-            for (const x of document.getElementsByClassName("values")) {
-                x.innerHTML = `${dataHere[keys[i]]}`;
+            for (const x of document.getElementsByClassName("detailHolder")) {
+                x.innerHTML = `${keys[i]} : ${dataHere[keys[i]]}`;
                 i++;
             }
         }
@@ -51,7 +51,7 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
                 updateTableData(position);
 
                 setTimeout(() => {
-                    html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
+                    html2canvas(document.getElementById("main"), {dpi : 300}).then(canvas=>{
                         document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
                     });
                 }, 300);
@@ -64,7 +64,7 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
                 updateTableData(position);
 
                 setTimeout(() => {
-                    html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
+                    html2canvas(document.getElementById("main"), {dpi : 300}).then(canvas=>{
                         document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
                     });
                 }, 300);
@@ -76,3 +76,15 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
     });
 
 }
+
+var _keys = ["Name", "Description", "BranchType", "DeliveryStatus", "Circle", "District", "Division", "Region", "Block", "State", "Country", "Pincode"]
+
+for (const key of _keys) {
+    document.getElementById("main").innerHTML += `<div class="detailHolder">${key} : </div>`;
+}
+
+document.getElementById("input").addEventListener("keypress",(e)=>{
+    if(e.keyCode==13){
+        document.getElementById("fetchDataBtn").click();
+    }
+});

@@ -12,7 +12,11 @@
 <body>
     <!-- <img src="https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg"> -->
     <div id="image" class="width30"></div>
-    <input type="text" placeholder="Enter pincode or post office name" required id="input" class="width30">
+    <select id="select" onchange="changed()" class="width30">
+        <option value="number">Via Pincode</option>
+        <option value="text">Via Name</option>
+    </select>
+    <input type="number" required id="input" class="width30" placeholder="Enter Pincode">
     <button id="fetchDataBtn" class="width30">Proceed</button>
     <div id="main" class="width30">
         <div id="heading">POSTAL CODE DETAILS</div>
@@ -23,7 +27,7 @@
         <label id="currP_maxP"> / </label>
         <i id="rightBtn" class="plusMinusBtn fa-solid fa-circle-chevron-right"></i>
     </div>
-    <a href="" id="saveDetails" download="POSTALCODEDEATILS.jpg">Save Current Details</a>
+    <a href="" id="saveDetails" download="POSTALCODEDEATILS.jpg" class="width30">Save Current Details</a>
     <script src="node.js" defer></script>
 </body>
 </html>

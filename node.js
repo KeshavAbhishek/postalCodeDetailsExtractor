@@ -88,3 +88,14 @@ document.getElementById("input").addEventListener("keypress",(e)=>{
         document.getElementById("fetchDataBtn").click();
     }
 });
+
+function changed(){
+    document.getElementById("input").type=document.getElementById("select").value;
+
+    if(document.getElementById("select").value=="number"){
+        document.getElementById("input").placeholder="Enter Pincode";
+    }
+    else{
+        document.getElementById("input").placeholder="Enter Post Office name";
+    }
+}

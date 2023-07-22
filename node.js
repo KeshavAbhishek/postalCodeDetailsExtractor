@@ -69,7 +69,7 @@ document.getElementById("fetchDataBtn").onclick = function(){
 
                 setTimeout(() => {
                     html2canvas(document.getElementById("main"), {dpi : 300}).then(canvas=>{
-                        document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
+                        document.getElementById("saveDetails").href = canvas.toDataURL();
                     });
                 }, 300);
             }

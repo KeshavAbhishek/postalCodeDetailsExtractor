@@ -17,7 +17,7 @@ function fetchFromDOP(){
     }
 }
 
-document.getElementById("fetchDataBtn").onclick = ()=>{
+document.getElementById("fetchDataBtn").onclick = function(){
     fetchFromDOP().then((data) => {
         list = data[0][0]['PostOffice'];
 
@@ -35,6 +35,10 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
         }
 
         updateTableData(position);
+
+        html2canvas(document.getElementById("main"), {dpi : 300}).then(canvas=>{
+            document.getElementById("saveDetails").href = canvas.toDataURL("image/jpg");
+        });
         
         setTimeout(() => {
             html2canvas(document.getElementById("table"), {dpi : 300}).then(canvas=>{
@@ -71,10 +75,30 @@ document.getElementById("fetchDataBtn").onclick = ()=>{
             }
         }
 
+        // var start = 0;
+        // var end = 0;
+        // document.getElementById("main").addEventListener("touchstart",function(e){
+        //     start = e.touches[0].clientX;
+        // });
+
+        // document.getElementById("main").addEventListener("touchmove",function(e){
+        //     end = e.touches[0].clientX;
+
+        //     if(start < end){
+        //         // confirm("LEFT");
+        //         leftClick();
+        //     }
+        //     if(start > end){
+        //         // confirm("RIGHT");
+        //         rightClick();
+        //     }
+
+        //     return;
+        // });
+
         document.getElementById("leftBtn").onclick = leftClick;
         document.getElementById("rightBtn").onclick = rightClick;
     });
-
 }
 
 var _keys = ["Name", "Description", "BranchType", "DeliveryStatus", "Circle", "District", "Division", "Region", "Block", "State", "Country", "Pincode"]
@@ -99,3 +123,22 @@ function changed(){
         document.getElementById("input").placeholder="Enter Post Office name";
     }
 }
+
+// var start = 0;
+// var end = 0;
+// document.getElementById("main").addEventListener("touchstart",function(e){
+//     start = e.touches[0].clientX;
+// });
+
+// document.getElementById("main").addEventListener("touchmove",function(e){
+//     end = e.touches[0].clientX;
+
+//     if(start < end){
+//         // confirm("LEFT");
+//         leftClick();
+//     }
+//     if(start > end){
+//         // confirm("RIGHT");
+//         rightClick();
+//     }
+// });

@@ -78,6 +78,7 @@ a{
     background-blend-mode: multiply;
     border-radius: 15px;
     background: url(https://davnrps.in/erp/assets/admin_lte/images/bg-01.jpg);
+    /* background-color: red; */
     background-size: cover;
     border: 0 !important;
     outline: none !important;

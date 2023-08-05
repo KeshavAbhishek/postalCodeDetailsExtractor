@@ -75,27 +75,6 @@ document.getElementById("fetchDataBtn").onclick = function(){
             }
         }
 
-        // var start = 0;
-        // var end = 0;
-        // document.getElementById("main").addEventListener("touchstart",function(e){
-        //     start = e.touches[0].clientX;
-        // });
-
-        // document.getElementById("main").addEventListener("touchmove",function(e){
-        //     end = e.touches[0].clientX;
-
-        //     if(start < end){
-        //         // confirm("LEFT");
-        //         leftClick();
-        //     }
-        //     if(start > end){
-        //         // confirm("RIGHT");
-        //         rightClick();
-        //     }
-
-        //     return;
-        // });
-
         document.getElementById("leftBtn").onclick = leftClick;
         document.getElementById("rightBtn").onclick = rightClick;
     });

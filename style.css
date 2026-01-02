@@ -1,97 +1,308 @@
-*{
+:root {
+    --primary: #DA251C; /* India Post Red */
+    --primary-dark: #b31810;
+    --accent: #FFC72C; /* India Post Yellow */
+    --text-dark: #333333;
+    --text-light: #777777;
+    --bg-color: #f0f2f5;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 15px 35px rgba(218, 37, 28, 0.15);
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-body{
-    width: 100vw;
-    /* min-height: 100vh; */
+
+body {
+    background-color: var(--bg-color);
+    background-image: linear-gradient(135deg, #f0f2f5 0%, #e2e6ea 100%);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
     flex-direction: column;
+    gap: 20px;
 }
-button{
-    font-size: 30pt;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 1.5% 0;
-    width: 45vw;
-    background: green;
-    color: white;
-    border: 0;
-    outline: 0;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 2% 0;
-    margin-top: 4%;
-}
-input{
-    font-size: 25pt;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+/* Header */
+.app-header {
     text-align: center;
-    padding: 2% 0;
-    outline: 0;
-    width: 80vw;
+    margin-bottom: 10px;
 }
-table{
-    width: 90vw;
-    margin: 2% 0;
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--primary);
 }
-#btnFrame{
-    width: 80vw;
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.app-header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.app-header p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Search Panel */
+.search-panel {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+select, input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s;
+    background: #f9f9f9;
+    outline: none;
+    appearance: none;
+}
+
+select {
+    background-image: url("https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+select:focus, input:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(218, 37, 28, 0.1);
+}
+
+#fetchDataBtn {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#fetchDataBtn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(218, 37, 28, 0.3);
+}
+
+/* Results Area */
+.hidden {
+    display: none !important;
+}
+
+.card-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid red; */
-    padding: 15px 0;
+    margin-bottom: 15px;
 }
-.plusMinusBtn{
+
+.nav-btn {
+    background: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     cursor: pointer;
-    font-size: 40pt;
+    transition: 0.2s;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-label{
-    font-size: 32pt;
-    font-weight: bolder;
+.nav-btn:hover {
+    background: var(--primary);
+    color: var(--white);
 }
 
-th{
-    padding: 1.5% 0;
-    font-size: 20pt;
-}
-td{
-    font-size: 13pt;
-}
-
-img{
-    width: 100vw;
-    margin-top: 0;
-    margin-bottom: 5%;
+.pagination-badge {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
-::-webkit-scrollbar{
-    display: none;
+/* Postal Card Design */
+.postal-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--primary);
+    /* Subtle texture */
+    background-image: radial-gradient(#eee 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
-a{
-    font-size: 30pt;
+.card-header {
+    background: var(--white);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px dashed #ddd;
+}
+
+.card-logo {
+    height: 40px;
+    object-fit: contain;
+}
+
+.card-title {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 3px;
+}
+
+.card-body {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    word-break: break-word;
+}
+
+/* Span full width for address-like fields */
+.detail-item.full-width {
+    grid-column: span 2;
+}
+
+.card-footer {
+    height: 15px;
+    background: var(--primary);
+    display: flex;
+}
+
+.footer-strip {
+    width: 20%;
+    height: 100%;
+    background: var(--accent);
+    margin-left: auto;
+}
+
+/* Download Button */
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    background: var(--text-dark);
+    color: var(--white);
     text-decoration: none;
-    margin-bottom: 6%;
-    margin-top: 3%;
-    color: white;
-    background: navy;
-    padding: 1.5% 5%;
-    font-weight: bolder;
+    padding: 12px;
     border-radius: 10px;
-    display: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-@media screen and (max-width:700px) {
-    ::placeholder{
-        font-size: 19.5pt;
-    }
+.download-btn:hover {
+    background: #000;
+}
 
-    #saveDetails{
-        font-size: 25pt;
+/* Loader */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Tweaks */
+@media screen and (max-width: 500px) {
+    .card-body {
+        grid-template-columns: 1fr;
+    }
+    .detail-item.full-width {
+        grid-column: span 1;
     }
 }

@@ -2,79 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POSTAL CODES DETAILS</title>
+    <title>India Post Search</title>
+    
     <script src="https://kit.fontawesome.com/477be79e6e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg">
-    <input type="text" placeholder="Enter pincode or post office name" required>
-    <button id="fetchDataBtn">Proceed</button>
-    <table border="1" id="table">
-        <thead>
-            <tr>
-                <th colspan="2">POSTAL CODES DETAILS</th>
-            </tr>
-        </thead>
-        <tr>
-            <td class="keys">Name</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Description</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">BranchType</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">DeliveryStatus</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Circle</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">District</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Division</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Region</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Block</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">State</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Country</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-        <tr>
-            <td class="keys">Pincode</td>
-            <td class="values">Data Not Available</td>
-        </tr>
-    </table>
-    <div id="btnFrame">
-        <i id="leftBtn" class="plusMinusBtn fa-solid fa-circle-chevron-left"></i>
-        <label id="currP_maxP"> / </label>
-        <i id="rightBtn" class="plusMinusBtn fa-solid fa-circle-chevron-right"></i>
 
+    <div class="container">
+        <header class="app-header">
+            <div class="logo-area">
+                <i class="fa-solid fa-envelopes-bulk logo-icon"></i>
+                <h1>Postal Code Finder</h1>
+            </div>
+            <p>Search by Pincode or Branch Name</p>
+        </header>
+
+        <div class="search-panel">
+            <div class="input-group">
+                <select id="select" onchange="changed()">
+                    <option value="number">Search via Pincode</option>
+                    <option value="text">Search via Name</option>
+                </select>
+                <div class="input-wrapper">
+                    <input type="number" required id="input" placeholder="Enter 6-digit Pincode">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+            </div>
+            <button id="fetchDataBtn">
+                <span>Search Records</span>
+            </button>
+        </div>
+
+        <div id="loader" class="loader hidden"></div>
+
+        <div id="resultsArea" class="hidden">
+            
+            <div class="card-actions">
+                <button id="leftBtn" class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <span id="currP_maxP" class="pagination-badge">1 / 1</span>
+                <button id="rightBtn" class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div id="main" class="postal-card">
+                <div class="card-header">
+                    <img src="https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg" alt="India Post" class="card-logo">
+                    <div class="card-title">POSTAL INFORMATION</div>
+                </div>
+                <div class="card-body" id="detailsContainer">
+                    </div>
+                <div class="card-footer">
+                    <div class="footer-strip"></div>
+                </div>
+            </div>
+
+            <a href="#" id="saveDetails" download="Postal_Details.jpg" class="download-btn">
+                <i class="fa-solid fa-download"></i> Download Card
+            </a>
+        </div>
     </div>
-    <a href="" id="saveDetails" download="POSTALCODEDEATILS.jpg">Save Current Details</a>
+
     <script src="node.js" defer></script>
 </body>
 </html>

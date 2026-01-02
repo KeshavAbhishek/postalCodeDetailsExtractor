@@ -14,7 +14,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
+=======
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+>>>>>>> aa79bfe48ab533832f175b326252e74a652f39dd
 }
 
 body {
@@ -34,6 +38,7 @@ body {
     flex-direction: column;
     gap: 20px;
 }
+<<<<<<< HEAD
 
 /* Header */
 .app-header {
@@ -144,6 +149,34 @@ select:focus, input:focus {
 }
 
 .card-actions {
+=======
+button{
+    font-size: 30pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 1.5% 0;
+    width: 45vw;
+    background: green;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+input{
+    font-size: 25pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    padding: 2% 0;
+    outline: 0;
+    width: 80vw;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+#btnFrame{
+    width: 80vw;
+>>>>>>> aa79bfe48ab533832f175b326252e74a652f39dd
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -171,6 +204,7 @@ select:focus, input:focus {
     color: var(--white);
 }
 
+<<<<<<< HEAD
 .pagination-badge {
     background: var(--text-dark);
     color: var(--white);
@@ -200,6 +234,10 @@ select:focus, input:focus {
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px dashed #ddd;
+=======
+::-webkit-scrollbar{
+    display: none;
+>>>>>>> aa79bfe48ab533832f175b326252e74a652f39dd
 }
 
 .card-logo {
@@ -277,9 +315,71 @@ select:focus, input:focus {
     transition: 0.3s;
 }
 
+<<<<<<< HEAD
 .download-btn:hover {
     background: #000;
 }
+=======
+#main{
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    width: 80%;
+    padding: 20px 20px;
+    background-blend-mode: multiply;
+    border-radius: 15px;
+    background: url(https://davnrps.in/erp/assets/admin_lte/images/bg-01.jpg);
+    background-color: #5ee3f0;
+    background-size: cover;
+    border: 0 !important;
+    outline: none !important;
+    margin: 15px 0;
+}
+
+#heading{
+    text-align: center;
+    width: 100%;font-size: 2.5rem;
+    font-weight: bolder;
+    /* color: white !important; */
+    text-decoration: underline;
+}
+
+.detailHolder{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 5px 0;
+}
+
+#image{
+    width: 80%;
+    aspect-ratio: calc(958 / 443);
+    background: url(https://content.jdmagicbox.com/comp/ernakulam/i2/0484px484.x484.000493521725.i4i2/catalogue/india-post-ernakulam-courier-services-kdtir.jpg);
+    background-size: cover;
+    margin: 30px 0;
+    border-radius: 15px;
+}
+
+.width30{
+    width: 30% !important;
+}
+
+#select{
+    border-radius: 15px;
+    background: none;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    outline: none;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+#input::-webkit-inner-spin-button{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    ::placeholder{
+        font-size: 19.5pt;
+    }
+>>>>>>> aa79bfe48ab533832f175b326252e74a652f39dd
 
 /* Loader */
 .loader {
@@ -304,5 +404,23 @@ select:focus, input:focus {
     }
     .detail-item.full-width {
         grid-column: span 1;
+    }
+
+    .width30{
+        width: 93% !important;
+    }
+
+    #heading, #select{
+        font-size: 2rem;
+    }
+
+    #select{
+        width: 93%;
+        border-radius: 15px;
+        background: none;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        outline: none;
+        font-weight: bolder;
     }
 }
